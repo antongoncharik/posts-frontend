@@ -20,8 +20,9 @@
     "module": "es2020",
     "lib": ["es2020", "dom"],
     "paths": {
-      "@user/*": ["src/app/user/*"],
-      "@admin/*": ["src/app/admin/*"]
+      "@admin/*": ["src/app/admin/*"],
+      "@shared/*": ["src/app/shared/*"],
+      "@user/*": ["src/app/user/*"]
     }
   },
   "angularCompilerOptions": {

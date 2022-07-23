@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainLayoutComponent } from '@user/shared/components';
 import { HomeComponent, PostComponent } from '@user/pages';
+import { PostItemComponent } from '@shared/components/post-item/post-item.component';
 
 @NgModule({
   declarations: [
@@ -12,6 +13,7 @@ import { HomeComponent, PostComponent } from '@user/pages';
     MainLayoutComponent,
     HomeComponent,
     PostComponent,
+    PostItemComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
