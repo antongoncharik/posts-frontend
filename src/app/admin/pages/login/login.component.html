@@ -1,1 +1,49 @@
-<p>login works!</p>
+<form class="card" [formGroup]="form" (ngSubmit)="submit()">
+  <h2>Login to admin panel</h2>
+  <div
+    class="form-control"
+    [ngClass]="{
+      invalid: form.controls.email.touched && form.controls.email.invalid
+    }"
+  >
+    <label for="email">Email:</label>
+    <input id="email" type="email" formControlName="email" />
+    <div
+      *ngIf="form.controls.email.touched && form.controls.email.invalid"
+      class="validation"
+    >
+      <small *ngIf="form.controls.email.errors?.required"
+        >Email is required</small
+      >
+      <small *ngIf="form.controls.email.errors?.email"
+        >Email is not valid</small
+      >
+    </div>
+  </div>
+  <div
+    class="form-control"
+    [ngClass]="{
+      invalid: form.controls.password.touched && form.controls.password.invalid
+    }"
+  >
+    <label for="password">Password:</label>
+    <input id="password" type="password" formControlName="password" />
+    <div
+      class="validation"
+      *ngIf="form.controls.password.touched && form.controls.password.invalid"
+    >
+      <small *ngIf="form.controls.password.errors?.required"
+        >Password is required</small
+      >
+      <small *ngIf="form.controls.password.errors?.minlength"
+        >Email is not valid. There is actual length
+        {{ form.controls.password.errors?.minlength.actualLength }}, but
+        required
+        {{ form.controls.password.errors?.minlength.requiredLength }}</small
+      >
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary" [disabled]="form.invalid">
+    Login
+  </button>
+</form>
